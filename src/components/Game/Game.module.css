@@ -1,0 +1,7 @@
+.game {
+  @apply container mx-auto min-h-screen flex flex-col justify-center items-center;
+}
+
+.info {
+  @apply my-8 text-4xl text-white font-semibold;
+}

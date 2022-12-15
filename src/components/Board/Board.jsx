@@ -1,21 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Square from "./../Square/Square";
 import styles from "./../Board/Board.module.css";
 
-const Board = () => {
-  const initialValues = Array(9).fill(null);
-  const [squares, setSquares] = useState(initialValues);
-  const [isXNext, setIsXNext] = useState(true);
-
-  const handleClick = (squareNumber) => {
-    if (squares[squareNumber]) return;
-
-    const updatedSquares = [...squares];
-    updatedSquares[squareNumber] = isXNext ? "X" : "O";
-    setSquares(updatedSquares);
-    setIsXNext(!isXNext);
-  };
-
+const Board = ({ squares, isXNext, handleClick, winnerLines }) => {
   return (
     <div className={styles.board}>
       {
@@ -25,6 +12,7 @@ const Board = () => {
             key={i}
             onClick={() => handleClick(i)}
             isXNext={isXNext}
+            isWon={winnerLines && winnerLines.indexOf(i) !== -1}
           />
         ))
       }

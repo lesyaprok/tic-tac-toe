@@ -1,7 +1,11 @@
 .game {
-  @apply container mx-auto min-h-screen flex flex-col justify-center items-center;
+  @apply container px-2 min-h-screen mx-auto flex flex-col items-center;
 }
 
 .info {
   @apply my-8 text-4xl text-white font-semibold;
+}
+
+.gameboard {
+  @apply min-h-screen flex flex-col justify-center items-center;
 }

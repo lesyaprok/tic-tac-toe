@@ -1,0 +1,7 @@
+.list {
+  @apply w-full md:w-2/3 text-center lg:absolute lg:w-60 top-2 right-2;
+}
+
+.item {
+  @apply p-3 bg-grafit bg-opacity-60 box-border mb-2 text-xl text-white transition-all rounded-xl shadow-md;
+}

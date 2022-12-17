@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../../ui/Button/Button";
 import History from "../History/History";
 import Board from "./../Board/Board";
 import styles from "./Game.module.css";
@@ -18,10 +19,16 @@ const Game = () => {
     const currentPlayer = isXNext ? "X" : "O";
     const updatedSquares = [...current];
     updatedSquares[squareNumber] = currentPlayer;
-    
+
     setHistory([...history, { squares: updatedSquares }]);
     setIsXNext(!isXNext);
     setSquareNumbers([...squareNumbers, [currentPlayer, squareNumber]]);
+  };
+
+  const restartGame = () => {
+    setHistory([{ squares: initialValues }]);
+    setIsXNext(true);
+    setSquareNumbers([]);
   };
 
   const currentState = history[history.length - 1].squares;
@@ -48,6 +55,7 @@ const Game = () => {
           isXNext={isXNext}
           winnerLines={winnerLines}
         />
+        <Button onClick={restartGame}>Restart game</Button>
       </div>
 
       <History squareNumbers={squareNumbers} />

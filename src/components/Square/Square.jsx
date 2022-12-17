@@ -3,7 +3,7 @@ import styles from "./Square.module.css";
 
 const Square = ({ value, onClick, isWon }) => {
   const color = value === "X" ? "text-grafit" : "text-pink";
-  const bgColor = isWon ? "bg-cyan-100" : "bg-white";
+  const bgColor = isWon ? "bg-orange-100" : "bg-white";
 
   return (
     <div

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../../ui/Button/Button";
+import Logo from "../../ui/Logo/Logo";
 import History from "../History/History";
 import Board from "./../Board/Board";
 import styles from "./Game.module.css";
@@ -47,6 +48,7 @@ const Game = () => {
 
   return (
     <div className={styles.game}>
+      <Logo />
       <div className={styles.gameboard}>
         {info}
         <Board
